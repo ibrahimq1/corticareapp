@@ -1,45 +1,83 @@
-# [Corticate HexCambridge 2021]
-# [Flask Dashboard](https://appseed.us/admin-dashboards/flask?ref=gh) [Star Admin](https://appseed.us/admin-dashboards/django-dashboard-staradmin)
+# [Corticare HexCambridge 2021](http://www.corticare.online/login)
 
-# [Flask Dashboard](https://appseed.us/admin-dashboards/flask?ref=gh) [Star Admin](https://appseed.us/admin-dashboards/django-dashboard-staradmin)
+> A means of quantifying the healthcare system through a web app designed for healthcare professionals and their patients to monitor anxiety levels by measuring salivary cortisol.
+
+## Built with
+
+<img src="/builtwith2.png"> 
+
+
+
+## [You can test the app here](http://www.corticare.online/login)
+
+New users (patients) can register and make an account by entering details (username, email, password) or use the pre-made test user (**test/test**).
+
+A physician can login through the admin user (**admin/admin**) required*
+
+## About CortiCare:
+
+Within the last few decades, mental healthcare has gained a lot of attention – which isn't without reason. In Canada, 1 in 5 Canadians are reported to experience mental health issues and by the age 40, 50% of the population will have or have had a mental illness. However, the focus of this project is with anxiety disorders reported to affect 5% of the population and the 1 in 10 Canadians that have been reported to annually use health services related to mood and anxiety disorders. In 2012, 2.4 million Canadians aged 15 and above reported symptoms which were compatible with generalized anxiety disorder (GAD) during their lifetime. These symptoms include: persistent worrying or anxiety, overthinking plans and solutions to all possible worst-case outcomes, indecisiveness and fear of making the wrong decision, inability to set aside or let go of a worry, fatigue, difficulty sleeping, sweating, nausea, diarrhea or irritable bowel syndrome and irritability – just to name a few. Besides GAD, anxiety disorders constitute an even longer list of illnesses including: panic disorder, agoraphobia, social phobia, OCD and PTSD. As such, it's easy to understand how the various forms of anxiety can drastically impair one's quality of life.
+
+In current practice, chemical tests are not performed to diagnose mental illnesses, including anxiety. Instead, doctors assess a patient's family history and perform psychological evaluations through the use of questionnaires. This typically involves asking patients about their thoughts, feelings, symptoms, lifestyle habits, and daily activities. Based on the answers that are provided, doctors can diagnose the patient in accordance with the DSM-5 (Diagnostic and Statistical Manual of Mental Disorders - 5th Edition) and prescribe medication or adjust current dosages. The problem with the current diagnostic method is that clinicians make subjective interpretations based on the patient’s self-reported and qualitative information. Additionally, the care provided is strongly dependent on the patient's ability to advocate for their own needs, which is not something everyone is able to do easily.
+
+When it comes to anxiety and stress, our central nervous system responds through the activation of the hypothalamic-pituitary-adrenal (HPA) system. This means that our hypothalamus in our brain releases corticotropin-releasing hormones (CRH), signalling our pituitary glands to release adrenocorticotropic hormone (ACTH), which finally signals the adrenal glands to release cortisol, the key player in our entire project. A patient with anxiety experiences chronic stress, resulting in the persistent activation of the HPA system and impairment of cortisol to regulate its own production. Subsequently, the elevation of cortisol levels will lead to dysregulation of other important biochemicals, through decreased estrogen and testosterone levels, and impaired signalling of the serotonin pathways.
+
+In an attempt to address this issue, we present CortiCare. We propose a method to objectively measure anxiety levels, allowing for more accurate diagnoses and efficient treatment plans. Using this technology, patients can track their own salivary cortisol levels using a web app in the form of data accessible to their doctors online.
+
+
+## What it does
+![steps](https://res.cloudinary.com/devpost/image/fetch/s--NSrH9OvF--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/https://i.ibb.co/t3j89p3/Screen-Shot-2021-01-23-at-4-51-46-PM.png)
+
+The patients will obtain a kit containing a phone cover, cortisol test strips and capillary tubes to collect the saliva. They’ll be asked to collect saliva samples at daily scheduled time(s) 30 minutes prior to eating and place it onto the test strip. Once the salivary sample is placed onto our test strip, it undergoes a process called lateral flow immunoassay (LFIA), a technique commonly used for pregnancy tests. It indicates the concentration of our target analyte, cortisol, which is proportional to the intensity of the observed red strip colour. The saliva moves from the sample pad to the conjugate pad, where cortisol will bind to the cortisol-specific antibodies with a detection label. The cortisol-bound antibodies will then migrate to the test line and bind to additional antibodies and where a red line will be observed.
+
+![strip](https://res.cloudinary.com/devpost/image/fetch/s--QcMiugNa--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/https://i.ibb.co/JvfZSZr/Screen-Shot-2021-01-23-at-2-48-34-PM.png)
+
+The cortisol test strip will then be placed into the phone cover for proper alignment. The patient will log into the web app and take a picture of the test strip. The RGB values of the red line of the test strip will be converted into signal data and present the cortisol measurements in ng/mL. The cortisol data will be presented in a graph for users to visually see the trends of cortisol levels, and in return anxiety levels, of the patient throughout time. As an additional feature, patients can also log their emotions/mood for that day which will be presented as a monthly radar chart.
+
+
+
+# How we built it
+
+Our web app was built using python flask, pillow and sqlite database. While the base template is an open source template obtained for a flask admin dashboard, all of its features were built by us. This includes the admin panel and verification, patient panel, algorithm for assigning a cortisol score from an image of a test strip and storing the related information on the database to persist user information. For the algorithm to detect the cortisol score, we initially take an image as an input and break it into a numpy array. After this, we locate all black pixels (the rectangle which exists on the strips) and extract the region of interest. From the ROI, we obtain all colors present in the picture and are able to calculate a score by multiplying the R value from RGB with the amount of pixels. Using the score from images of test strips with known concentrations of cortisol (ng/mL), the values were plotted on a graph and the equation of the trendline was determined. This equation was then used to calculate the concentration of cortisol from images of test strips where the concentration was unknown.
+
+
+![Data](https://res.cloudinary.com/devpost/image/fetch/s--wb1rMNyw--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/https://i.ibb.co/W672fT3/Screen-Shot-2021-01-23-at-5-26-22-PM.png)
+
+
+# Built with boilerplate from
+## [Flask Dashboard](https://appseed.us/admin-dashboards/flask?ref=gh) [Star Admin](https://appseed.us/admin-dashboards/django-dashboard-staradmin)
 
 [Admin dashboard](https://appseed.us/admin-dashboards) generated by AppSeed in **Flask** Framework.
 
-[Star Admin](https://appseed.us/admin-dashboards/django-dashboard-staradmin) is a beautifully designed admin template featuring a fine selection of useful Bootstrap components and elements. The pre-built pages of the templates are intuitive and very well-designed.
+
 
 <br />
 
 > Features
 
-- DBMS: SQLite, PostgreSQL (production) 
+Our web app was built using python flask, pillow and sqlite database. While the base template is an open source template obtained for a flask admin dashboard, all of its features were built by us. 
+
+Our boilerplate contained:
+
+- DBMS: SQLite, PostgreSQL (production)
 - DB Tools: SQLAlchemy ORM, Alembic (schema migrations)
-- Modular design with **Blueprints**, simple codebase
-- Session-Based authentication (via **flask_login**), Forms validation
-- Deployment scripts: Docker, Gunicorn / Nginx, Heroku
-- Support via **Github** and [Discord](https://discord.gg/fZC6hup).
+- Modular design with Blueprints, simple codebase
+- Session-based authentication (via flask_login), forms validation
+- Deployment scripts: Docker, Gunicorn/Nginx, Heroku
 
-<br />
+Features we implemented:
+- Dedicated admin login with doctor dashboard 
+- Admin verification for regular user page
+- Admin only user route to view users - revamped and our idea implemented
+- Test strip uploading and using our algorithm to determine cortisol scor
+- Numpy and pillow added to list of imports
+- User routes, pages revamped and our idea implemented
+- Database schema edited for more user related information
+- Graphs and charts generated from our data on the chart.js templates
+- Various HTML, CSS and JS embellishments throughout 
+- Support via Github and Discord.
 
-> Links
-
-- [Flask Star Admin](https://appseed.us/admin-dashboards/flask-dashboard-staradmin) - product page
-- [Flask Star Admin Demo](https://flask-star-admin.appseed-srv1.com/) - LIVE App
-- [Flask Tutorial](https://github.com/app-generator/tutorial-flask) - Getting started with Flask
-
-<br />
-
-## Want more? Go PRO!
-
-PRO versions include **Premium UI Kits**, Lifetime updates and **24/7 LIVE Support** (via [Discord](https://discord.gg/fZC6hup))
-
-| [Flask Datta PRO](https://appseed.us/admin-dashboards/flask-dashboard-dattaable-pro) | [Flask Material PRO](https://appseed.us/admin-dashboards/flask-dashboard-material-pro) | [Flask Volt PRO](https://appseed.us/admin-dashboards/flask-dashboard-volt-pro) |
-| --- | --- | --- |
-| [![Flask Datta PRO](https://raw.githubusercontent.com/app-generator/flask-dashboard-dattaable-pro/master/media/flask-dashboard-dattaable-pro-screen.png)](https://appseed.us/admin-dashboards/flask-dashboard-dattaable-pro) | [![Flask Material PRO](https://raw.githubusercontent.com/app-generator/flask-dashboard-material-pro/master/media/flask-dashboard-material-pro-screen.png)](https://appseed.us/admin-dashboards/flask-dashboard-material-pro) | [![Flask Volt PRO](https://raw.githubusercontent.com/app-generator/flask-dashboard-volt-pro/master/media/flask-dashboard-volt-pro-screen.png)](https://appseed.us/admin-dashboards/flask-dashboard-volt-pro)
-
-<br />
-<br />
-
-![Star Admin Flask - Template project coded in Flask with basic modules by AppSeed.](https://raw.githubusercontent.com/app-generator/flask-dashboard-staradmin/master/media/flask-dashboard-staradmin-screen.png)
+We moved app to git and heroku. Deployed on heroku with our domain.com domain name, "corticare.online" (http://corticare.com or corticare.com). CNAME edited on domain.com to point to heroku host.
 
 <br />
 
@@ -82,123 +120,7 @@ $
 $ # Access the dashboard in browser: http://127.0.0.1:5000/
 ```
 
-> Note: To use the app, please access the registration page and create a new user. After authentication, the app will unlock the private pages.
 
-<br />
-
-## Code-base structure
-
-The project is coded using blueprints, app factory pattern, dual configuration profile (development and production) and an intuitive structure presented bellow:
-
-> Simplified version
-
-```bash
-< PROJECT ROOT >
-   |
-   |-- app/                      # Implements app logic
-   |    |-- base/                # Base Blueprint - handles the authentication
-   |    |-- home/                # Home Blueprint - serve UI Kit pages
-   |    |
-   |   __init__.py               # Initialize the app
-   |
-   |-- requirements.txt          # Development modules - SQLite storage
-   |-- requirements-mysql.txt    # Production modules  - Mysql DMBS
-   |-- requirements-pqsql.txt    # Production modules  - PostgreSql DMBS
-   |
-   |-- .env                      # Inject Configuration via Environment
-   |-- config.py                 # Set up the app
-   |-- run.py                    # Start the app - WSGI gateway
-   |
-   |-- ************************************************************************
-```
-
-<br />
-
-> The bootstrap flow
-
-- `run.py` loads the `.env` file
-- Initialize the app using the specified profile: *Debug* or *Production*
-  - If env.DEBUG is set to *True* the SQLite storage is used
-  - If env.DEBUG is set to *False* the specified DB driver is used (MySql, PostgreSQL)
-- Call the app factory method `create_app` defined in app/__init__.py
-- Redirect the guest users to Login page
-- Unlock the pages served by *home* blueprint for authenticated users
-
-<br />
-
-> App / Base Blueprint
-
-The *Base* blueprint handles the authentication (routes and forms) and assets management. The structure is presented below:
-
-```bash
-< PROJECT ROOT >
-   |
-   |-- app/
-   |    |-- home/                                # Home Blueprint - serve app pages (private area)
-   |    |-- base/                                # Base Blueprint - handles the authentication
-   |         |-- static/
-   |         |    |-- <css, JS, images>          # CSS files, Javascripts files
-   |         |
-   |         |-- templates/                      # Templates used to render pages
-   |              |
-   |              |-- includes/                  #
-   |              |    |-- navigation.html       # Top menu component
-   |              |    |-- sidebar.html          # Sidebar component
-   |              |    |-- footer.html           # App Footer
-   |              |    |-- scripts.html          # Scripts common to all pages
-   |              |
-   |              |-- layouts/                   # Master pages
-   |              |    |-- base-fullscreen.html  # Used by Authentication pages
-   |              |    |-- base.html             # Used by common pages
-   |              |
-   |              |-- accounts/                  # Authentication pages
-   |                   |-- login.html            # Login page
-   |                   |-- register.html         # Registration page
-   |
-   |-- requirements.txt                          # Development modules - SQLite storage
-   |-- requirements-mysql.txt                    # Production modules  - Mysql DMBS
-   |-- requirements-pqsql.txt                    # Production modules  - PostgreSql DMBS
-   |
-   |-- .env                                      # Inject Configuration via Environment
-   |-- config.py                                 # Set up the app
-   |-- run.py                                    # Start the app - WSGI gateway
-   |
-   |-- ************************************************************************
-```
-
-<br />
-
-> App / Home Blueprint
-
-The *Home* blueprint handles UI Kit pages for authenticated users. This is the private zone of the app - the structure is presented below:
-
-```bash
-< PROJECT ROOT >
-   |
-   |-- app/
-   |    |-- base/                     # Base Blueprint - handles the authentication
-   |    |-- home/                     # Home Blueprint - serve app pages (private area)
-   |         |
-   |         |-- templates/           # UI Kit Pages
-   |              |
-   |              |-- index.html      # Default page
-   |              |-- page-404.html   # Error 404 - mandatory page
-   |              |-- page-500.html   # Error 500 - mandatory page
-   |              |-- page-403.html   # Error 403 - mandatory page
-   |              |-- *.html          # All other HTML pages
-   |
-   |-- requirements.txt               # Development modules - SQLite storage
-   |-- requirements-mysql.txt         # Production modules  - Mysql DMBS
-   |-- requirements-pqsql.txt         # Production modules  - PostgreSql DMBS
-   |
-   |-- .env                           # Inject Configuration via Environment
-   |-- config.py                      # Set up the app
-   |-- run.py                         # Start the app - WSGI gateway
-   |
-   |-- ************************************************************************
-```
-
-<br />
 
 ## Deployment
 
@@ -263,57 +185,7 @@ $ heroku open
 
 <br />
 
-### [Gunicorn](https://gunicorn.org/)
----
 
-Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX.
-
-> Install using pip
-
-```bash
-$ pip install gunicorn
-```
-> Start the app using gunicorn binary
-
-```bash
-$ gunicorn --bind 0.0.0.0:8001 run:app
-Serving on http://localhost:8001
-```
-
-Visit `http://localhost:8001` in your browser. The app should be up & running.
-
-<br />
-
-### [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/)
----
-
-Waitress (Gunicorn equivalent for Windows) is meant to be a production-quality pure-Python WSGI server with very acceptable performance. It has no dependencies except ones that live in the Python standard library.
-
-> Install using pip
-
-```bash
-$ pip install waitress
-```
-> Start the app using [waitress-serve](https://docs.pylonsproject.org/projects/waitress/en/stable/runner.html)
-
-```bash
-$ waitress-serve --port=8001 run:app
-Serving on http://localhost:8001
-```
-
-Visit `http://localhost:8001` in your browser. The app should be up & running.
-
-<br />
-
-## [Star Admin](https://www.bootstrapdash.com/product/star-admin-free/?ref=23) - Free Bootstrap Admin Template
-
-[Star Admin](https://www.bootstrapdash.com/product/star-admin-free/?ref=23) is a free responsive admin template built with Bootstrap 4. The template has colorful, attractive yet simple and elegant design. The template is well crafted, with all the components neatly and carefully designed and arranged within the template.
-
-[Star Admin](https://www.bootstrapdash.com/product/star-admin-free/?ref=23) is packed with all the features that fit your needs but not cramped with components you would not even use. It is an excellent fit to build admin panels, e-commerce systems, project management systems, CMS or CRM.
-
-Although the template has a design like none other, it is easily customizable to suit your requirements. Star Admin comes with a clean and well-commented code that makes it easy to work with the template. Thus making it an ideal pick for jump starting your project.
-
-<br />
 
 ## Credits & Links
 
