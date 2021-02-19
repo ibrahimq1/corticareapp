@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/static/assets/images/CoriCare_logo.png" />
+
+    <title>CortiCare - {% block title %}{% endblock %} | Cortisol Tracking App</title>
+
+    <link rel="stylesheet" href="/static/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/static/assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
+    <link rel="stylesheet" href="/static/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/static/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/static/assets/vendors/css/vendor.bundle.addons.css">
+
+    <link rel="stylesheet" href="/static/assets/css/shared/style.css">
+    <link rel="stylesheet" href="/static/assets/css/demo_1/style.css">
+
+    <!-- Specific CSS goes HERE -->
+    {% block stylesheets %}
+    
+   
+    {% endblock stylesheets %}
+
+  </head>
+  <body onload="timeout()">
+    
+      {% include 'includes/navigation.html' %}
+
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+
+        {% include 'includes/sidebar.html' %}
+
+        <!-- partial working -->
+        
+        <div class="main-panel">
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+                  
+              <div class="card" id="hideMe" style="background-color:rgb(73, 161, 13);">
+                <div class="card-body">
+                  <p style="color:white; font-size: large; font-weight: 200; margin-bottom:-0.20%;">Your submission was successful!</p>
+                </div>
+              </div>
+                    
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+
+          {% block content %}
+        <div class="container-scroller">
+    
+          
+          <div class="row" style="margin-bottom:-5%">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card" style="background-color: #2148EF;">
+                <div class="card-body">
+                  <p style="color:white; font-size: large; font-weight: 200;"><b>A means of quantifying the healthcare system through a web app designed for healthcare professionals and their patients to monitor anxiety levels by measuring salivary cortisol.</b> </p>
+                </div>
+              </div>
+              </div>
+            </div>
+            
+            <img style ="display: block; margin-left:auto; margin-right:auto; width:70%" src="/static/assets/images/process_corti.png">
+          
+          {% if current_user.username == 'admin' %}
+          <h4 style="padding: 2% 0% 0% 2%;">Viewing User: <b>{{ user.username }}</b></h4>
+          {% endif %}
+          
+          <div class="row">
+            {% if current_user.username != 'admin' %}
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title"><b>Daily Log </b></h4>
+                  <p class="card-description"> Choose the emotions below to describe your mood today: </p>
+                  
+                  <form action="/data" method="POST" enctype="multipart/form-data">
+                    
+                    <div class="form-check form-check-flat">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="mycheckbox" value="Happy"> Happy </label>
+                    </div>
+                    <div class="form-check form-check-flat">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="mycheckbox" value="Irritated"> Irritated </label>
+                    </div>
+                    <div class="form-check form-check-flat">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="mycheckbox" value="Sad"> Sad </label>
+                    </div>
+                    <div class="form-check form-check-flat">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="mycheckbox" value="Anxious"> Anxious </label>
+                    </div>
+                    <div class="form-check form-check-flat">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="mycheckbox" value="Calm"> Calm </label>
+                    </div>
+                    <div class="form-check form-check-flat">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="mycheckbox" value="Depressed"> Depressed </label>
+                    </div>
+                    <div class="form-check form-check-flat">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="mycheckbox" value="Apathetic"> Apathetic </label>
+                    </div>
+                    <div class="form-check form-check-flat">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="mycheckbox" value="Confused"> Confused </label>
+                    </div>
+                   
+                   
+                    
+                    <h4 class="card-title" style="padding-top:3.5%; padding-bottom:1.5%"> Let's measure your cortisol levels</h4>
+                    
+                    <div style="padding-bottom:2%">Upload your strip:
+                    <p>Demo strips can be found <a href="/demo-strips">here.</a></p>
+                    </div>
+                    <div>
+                      <label for="image" class="btn btn-primary btn-fw"><i class="fa fa-thumbs-up"></i>Upload</label> 
+                      <input type="file" class="mdi mdi-upload"  name="image" id ="image" style ="display: none;"onchange="previewFile(this);">
+                    </p>
+                    <img id="previewImg" src="static/assets/images/transp_placeholder.png" alt="Placeholder">
+                    <p>
+                    </div>
+                    <div style="text-align:center; padding-top:3.5%">
+
+                    <p><input type="submit" class="btn btn-success btn-fw"></p>
+                    </div>
+
+                  </form>
+
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            <div class="col-md-8 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title mb-0">Cortisol Measurements</h4>
+                  <div class="d-flex flex-column flex-lg-row">
+                    <p >Past week, month and year </p>
+                    <ul class="nav nav-tabs sales-mini-tabs ml-lg-auto mb-4 mb-md-0" role="tablist">
+                      
+                      <li class="nav-item">
+                        <a class="nav-link active" id="sales-statistics_switch_1" data-toggle="tab" role="tab" aria-selected="true">7D</a>
+                      </li>
+                      <!--
+                      <li class="nav-item">
+                        <a class="nav-link" id="sales-statistics_switch_2" data-toggle="tab" role="tab" aria-selected="false">5D</a>
+                      </li>
+                      -->
+                      <li class="nav-item">
+                        <a class="nav-link" id="sales-statistics_switch_1" data-toggle="tab" role="tab" aria-selected="false">1M</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="sales-statistics_switch_1" data-toggle="tab" role="tab" aria-selected="false">1Y</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="d-flex flex-column flex-lg-row">
+                    <div class="data-wrapper d-flex mt-2 mt-lg-0">
+                      <div class="wrapper pr-5">
+                        <h5 class="mb-0">Most recent</h5>
+                        <div class="d-flex align-items-center">
+                          <h4 class="font-weight-semibold mb-0" id="recentscore"></h4>
+                          <small class="ml-2 text-gray d-none d-lg-block" id= "ofhowmany"></small>
+                        </div>
+                      </div>
+                      <div class="wrapper">
+                        <h5 class="mb-0">Average</h5>
+                        <div class="d-flex align-items-center">
+                          <h4 class="font-weight-semibold mb-0" id="avgtest"></h4>
+                          <small class="ml-2 text-gray d-none d-lg-block" id="fromtest"></small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ml-lg-auto" id="sales-statistics-legend"></div>
+                  </div>
+                  <canvas class="mt-5" height="120" id="sales-statistics-overview"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body d-flex flex-column">
+                  <div class="wrapper">
+                    <h4 class="card-title mb-0">Average Mood Chart</h4>
+                    <p>Past month</p>
+                    <div class="mb-4" id="net-profit-legend"></div>
+                  </div>
+                  <canvas class="my-auto mx-auto" height="250" id="net-profit"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          {% endblock content %}
+
+          {% include 'includes/footer.html' %}
+
+        </div>
+        <!-- main-panel ends -->
+
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    {% include 'includes/scripts.html' %}
+    
+    <!-- Specific JS goes HERE -->
+    {% block javascripts %}
+    <script>
+      
+      var requiredmood_data = ["{{ usermood['Happy'] }}", "{{ usermood['Irritated'] }}", "{{ usermood['Sad'] }}", "{{ usermood['Anxious'] }}", "{{ usermood['Calm'] }}", "{{ usermood['Depressed'] }}", "{{ usermood['Apathetic'] }}", "{{ usermood['Confused'] }}"]
+      var cortdatadate =  "{{cortidata['Date']}}"
+      var fixeddate = cortdatadate.replace(/&#39;/g, '').replace("[", "").replace("]", "").replace(/ /g, "").split(",")
+      var usrcortilvl = "{{cortidata['Cortilvl']}}"
+      var fixedcorti = usrcortilvl.replace("[", "").replace("]", "").replace(/ /g, "").split(",")
+      
+      document.getElementById('recentscore').innerHTML = fixedcorti[fixedcorti.length-1] + " ng/ml"
+      //<b>89.5%</b> of 20,000 Total
+      document.getElementById('ofhowmany').innerHTML = fixedcorti.length + "th test" 
+      //avgtest fromtest
+      var sum = 0;
+      for( var i = 0; i < fixedcorti.length; i++ ){
+          sum += parseInt( fixedcorti[i], 10 ); 
+      }
+      avg = Math.round((sum / fixedcorti.length) * 100)/100 || 0;
+      document.getElementById('avgtest').innerHTML = avg + " ng/ml"
+      document.getElementById('fromtest').innerHTML = fixedcorti.length + " tests" 
+
+      function previewFile(input){
+        var file = $("input[type=file]").get(0).files[0];
+ 
+        if(file){
+            var reader = new FileReader();
+ 
+            reader.onload = function(){
+                $("#previewImg").attr("src", reader.result);
+            }
+ 
+            reader.readAsDataURL(file);
+        }
+    }
+
+    function previewFile2(input){
+        var file = $("input[type=file]").get(0).files[0];
+ 
+        if(file){
+            var reader = new FileReader();
+ 
+            reader.onload = function(){
+                $("#previewImg").attr("src", "/result.png");
+            }
+ 
+            reader.readAsDataURL(file);
+        }
+    }
+    function timeout(){
+      setTimeout(function() {
+      var x = document.getElementById("hideMe");
+      x.style.display = "none"
+      }, 1500);
+    }
+
+    </script>
+    {% endblock javascripts %}
+
+  </body>
+</html>

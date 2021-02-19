@@ -1,0 +1,39 @@
+
+{% extends "layouts/base.html" %}
+
+{% block title %} Charts {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-md-12 grid-margin">
+        <div class="card">
+          <div class="p-4 border-bottom bg-light">
+            <h4 class="card-title mb-0">demo test strips</h4>
+            <p class="card-description"> Click and download any of the cortisol test strips below and upload them on the main dashboard to measure cortisol concentrations: </p>
+          </div>
+          <div class="card-body">
+            <a href = "/static/assets/images/strips/test1.png" download="test1.png"><img title="Click to download!" src="/static/assets/images/strips/test1.png"></a>
+            <a href = "/static/assets/images/strips/test2.png" download="test2.png"><img title="Click to download!" src="/static/assets/images/strips/test2.png"></a>
+            <a href = "/static/assets/images/strips/test3.png" download="test3.png"><img title="Click to download!" src="/static/assets/images/strips/test3.png"></a>
+            <a href= "/static/assets/images/strips/test4.png" download="test4.png"><img title="Click to download!" src="/static/assets/images/strips/test4.png"></a>
+            <a href= "/static/assets/images/strips/test5.png" download="test5.png"><img title="Click to download!" src="/static/assets/images/strips/test5.png"></a>
+            <a href= "/static/assets/images/strips/test6.png" download="test6.png"><img title="Click to download!" src="/static/assets/images/strips/test6.png"></a>
+          </div>
+        </div>
+      </div>
+       
+    </div>
+  </div>
+
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+  <script src="/static/assets/js/shared/chart.js"></script>
+{% endblock javascripts %}
