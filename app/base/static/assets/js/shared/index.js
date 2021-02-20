@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   $('#messages').on('click', '#no1', function(e) {
     adduserChat('No');
-    addbotChat('If you’re an existing user, log in to your account here: URL');
+    addbotChat('If you’re an existing user, log in to your account here: <a href="/login"> Lets go! </a>');
   });
 
   // 2
@@ -113,7 +113,7 @@ $('#messages').on('click', '#no7', function(e) {
   
   $('#messages').on('click', '#yes7', function(e) {
     adduserChat('I’ve heard of the term before. What is it?');
-    addbotChat('Great! Let’s learn more about it. As a general introduction, let’s watch this video together to get a better understanding of what anxiety is and its effects in your body. https://www.youtube.com/watch?v=BVJkf8IuRjE What did you think of that video? \
+    addbotChat('Great! Let’s learn more about it. As a general introduction, let’s watch this video together to get a better understanding of what anxiety is and its effects in your body. <a target="_blank" href="https://www.youtube.com/watch?v=BVJkf8IuRjE">https://www.youtube.com/watch?v=BVJkf8IuRjE</a> What did you think of that video? \
     <button id="yes8">Yes</button> <button id="no8">No</button>');
   });
 
@@ -183,7 +183,7 @@ $('#messages').on('click', '#no12', function(e) {
   
   $('#messages').on('click', '#yes12', function(e) {
     adduserChat('Yes, sign me up!');
-     addbotChat('This is so exciting! In order to get you started, please create an account here: ');
+     addbotChat('This is so exciting! In order to get you started, please create an account here: <a href="/register"> Lets go! </a> ');
   });
 
    
