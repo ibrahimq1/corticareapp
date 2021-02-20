@@ -32,9 +32,11 @@ from flask import Response
 @blueprint.route('/')
 def route_default():
     return redirect(url_for('base_blueprint.login'))
+    
 
-
-
+@blueprint.route('home', methods=['GET'])
+def home():
+    return render_template('accounts/chatbotindex.html')
 
 @blueprint.route('allusers', methods=['GET'])
 def allusers():
