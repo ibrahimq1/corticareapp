@@ -24,7 +24,8 @@ const prompts = [
   ["what", "why", "how", "where", "when"],
   ["no","not sure","maybe","no thanks"],
   [""],
-  ["haha","ha","lol","hehe","funny","joke"]
+  ["haha","ha","lol","hehe","funny","joke"],
+  ["sup", "whats up", "yo", "whats good?", "ayo"]
 ]
 
 // Possible responses, in corresponding order
@@ -57,20 +58,22 @@ const replies = [
   ["Great question"],
   ["That's ok","I understand","What do you want to talk about?"],
   ["Please say something :("],
-  ["Haha!","Good one!"]
+  ["Haha!","Good one!"],
+  ["<iframe src=\"https://giphy.com/embed/47DGndFXqif24qtlDd\" width=\"170\" height=\"280\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe><p><a href=\"https://giphy.com/gifs/barstoolsports-shoot-47DGndFXqif24qtlDd\">via GIPHY</a></p>"]
 ]
 
 // Random for any other user input
 
 const alternative = [
-  //"Same",
-  //"Go on...",
-  "Epic bruh moment..."
-  //"Try again",
-  //"I'm listening...",
-  //"I don't understand :/"
+  "Same",
+  "Go on...",
+  "Epic bruh moment...",
+  "Try again",
+  "I'm listening...",
+  "I don't understand :/",
+  "Maybe you want to try Corticare. Please create an account here: <a href=\"/register\"> Lets go! </a>"
 ]
 
 // Whatever else you want :)
 
-const coronavirus = ["Please stay home", "Wear a mask", "Fortunately, I don't have COVID", "These are uncertain times"]
+const coronavirus = ["Please stay home", "Wear a mask", "Fortunately, I don't have COVID", "These are uncertain times", "Wear a mask!"]

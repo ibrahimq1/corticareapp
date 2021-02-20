@@ -190,7 +190,7 @@ $('#messages').on('click', '#no12', function(e) {
   
   
   inputField.addEventListener("keydown", (e) => {
-    if (e.code === "Enter") {
+    if (e.key ==="Enter") {
       let input = inputField.value;
       inputField.value = "";
       output(input);
@@ -326,7 +326,7 @@ function adduserChat(input) {
 }
 
 
-// Button Effects
+// Button Effects (Not sure if we will use)
 
 $.fn.boom = function(e) {
 	var colors = [

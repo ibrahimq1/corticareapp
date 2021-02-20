@@ -36,8 +36,9 @@ span {
 	width: 50vw;
 	display: flex;
 	flex-direction: column;
-  justify-content: center;
+  	justify-content: center;
 	align-items: center;
+	
 } 
 
 ::-webkit-input-placeholder { 
@@ -141,7 +142,14 @@ button:active, button:hover, button:focus {
 		justify-content: flex-start;
 	}
 	.chat {
-		width: 75vw;
+		width: 90%;
+		height:75vw;
 		margin: 10vw;
+	}
+	#botimage {
+		height: 60%;
+	}
+	span{
+		font-size: 150%;
 	}
 }
