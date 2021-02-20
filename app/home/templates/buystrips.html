@@ -1,0 +1,128 @@
+
+{% extends "layouts/base.html" %}
+
+{% block title %} Charts {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  .columns {
+    float: left;
+    width: 33.3%;
+    padding: 8px;
+  }
+  
+  .price {
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  
+  .price:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+  }
+  
+  .price .header {
+    background-color: #111;
+    color: white;
+    font-size: 25px;
+  }
+  
+  .price li {
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .price .grey {
+    background-color: #eee;
+    font-size: 20px;
+  }
+  
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .columns {
+      width: 100%;
+    }
+  }
+  </style>
+
+
+{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-md-12 grid-margin">
+        <div class="card">
+          <div class="p-4 border-bottom bg-light">
+            <h4 class="card-title mb-0">Buy Strips/Packages</h4>
+            <p class="card-description">Buy any of the Strips/Packages and get it delivered to your home!</p>
+          </div>
+          <div class="card-body">
+            <div class="columns">
+              <ul class="price">
+                <li class="header">Basic</li>
+                <li class="grey">Free</li>
+                <li>Daily Tests: 1</li>
+                <li>Test Logs</li>
+                <li>Export Test Results</li>
+                <li>For Personal tracking</li>
+                <li class="grey"><a href="#" class="button">Activated</a></li>
+              </ul>
+            </div>
+            
+            <div class="columns">
+              <ul class="price">
+                <li class="header" style="background-color:#4CAF50">Pro</li>
+                <li class="grey">$ 15.99 / mo</li>
+                <li>Daily Tests: 3</li>
+                <li>Test Logs</li>
+                <li>Export Test Results</li>
+                <li>Professional Advise on Mental Health</li>
+                <li class="grey"><a href="#" class="button">Sign Up</a></li>
+              </ul>
+            </div>
+            
+            <div class="columns">
+              <ul class="price">
+                <li class="header">Premium</li>
+                <li class="grey">$ 49.99 / mo</li>
+                <li>Daily Tests: Unlimited</li>
+                <li>Test Logs</li>
+                <li>Export Test Results</li>
+                <li>Monthly Doctors appointment</li>
+                <li class="grey"><a href="#" class="button">Sign Up</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+    </div>
+  </div>
+
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+  <script src="/static/assets/js/shared/chart.js"></script>
+{% endblock javascripts %}
