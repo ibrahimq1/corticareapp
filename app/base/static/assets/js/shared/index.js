@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $('#messages').on('click', '#yes2', function(e) {
     adduserChat('Yes');
     addbotChat('Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act. It also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood. Over the course of your life, have you felt like you’ve experienced mental health problems? \
-    <button id="yes3">Yes</button> <button id="no3">No</button>');
+    <button id="yes3">Maybe...?</button>');
   });
 
   $('#messages').on('click', '#no2', function(e) {
@@ -31,41 +31,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 3
-
-  $('#messages').on('click', '#no3', function(e) {
-    adduserChat('I want to leave');
-    addbotChat('Bye.');
-  });
-
   
   $('#messages').on('click', '#yes3', function(e) {
     adduserChat('Maybe...?');
     addbotChat('Experiencing mental health problems is more common than you think! Even if you haven’t yet, it’s possible to still happen in the future. Many factors contribute to mental health problems, including: biological factors (genes or brain chemistry), life experiences (trauma or abuse) and/or family history of mental health problems. Mental health problems are common but help is available. People with mental health problems can get better and many recover completely. Have you ever spoken to anyone about your mental health? \
-    <button id="yes4">Yes</button> <button id="no4">No</button>');
+    <button id="yes4">How do I know for sure?</button>');
   });
 
   // 4
-
-  $('#messages').on('click', '#no4', function(e) {
-    adduserChat('I want to leave');
-    addbotChat('Bye.');
-  });
-
   
   $('#messages').on('click', '#yes4', function(e) {
     adduserChat('How do I know for sure?');
     addbotChat('I highly recommend that you do, especially if you have concerns about your mental health, it’s really important to talk to someone about it. Mental healthcare professionals, in particular, can help someone better understand and cope with thoughts, feelings and behaviors. They can also offer guidance and help improve a person’s ability to achieve life goals. They may also help assess and diagnose mental health conditions. \
-    <button id="yes5">Yes</button> <button id="no6">No</button>');
+    <button id="yes5">Okay...How do I know if I have mental health problems?</button>');
   });
 
 // 5
 
-  $('#messages').on('click', '#no5', function(e) {
-    adduserChat('I want to leave');
-    addbotChat('Bye.');
-  });
-
-  
   $('#messages').on('click', '#yes5', function(e) {
     adduserChat('Okay...How do I know if i have mental health problems?');
     addbotChat('Experiencing one or more of the following feelings or behaviors can be an early warning sign of a problem: \
@@ -86,86 +68,50 @@ document.addEventListener("DOMContentLoaded", () => {
     <li>Inability to perform daily tasks like taking care of your kids or getting to work or school</li>\
     </ul> \
     People can experience different types of mental health problems. These problems can affect your thinking, mood, and behavior. \
-    <button id="yes6">Yes</button> <button id="no7">No</button>');
+    <button id="yes6">What are the different types?</button>');
   });
 
 // 6 
-
-$('#messages').on('click', '#no6', function(e) {
-    adduserChat('I want to leave');
-    addbotChat('Bye.');
-  });
-
   
   $('#messages').on('click', '#yes6', function(e) {
     adduserChat('What are the different types?');
     addbotChat('There’s anxiety disorders, behavioural disorders, eating disorders, mental health and substance abuse disorders, mood disorders, obsessive-compulsive disorders, personality disorders, psychotic disorders, suicidal behaviour, and trauma and stress related disorders. But let’s talk more about anxiety! Do you know what anxiety is? \
-    <button id="yes7">Yes</button> <button id="no7">No</button>');
+    <button id="yes7">Sort of. Can you tell me more?</button>');
   });
 
 // 7 
-
-$('#messages').on('click', '#no7', function(e) {
-    adduserChat('I want to leave');
-    addbotChat('Bye.');
-  });
-
   
   $('#messages').on('click', '#yes7', function(e) {
-    adduserChat('I’ve heard of the term before. What is it?');
-    addbotChat('Great! Let’s learn more about it. As a general introduction, let’s watch this video together to get a better understanding of what anxiety is and its effects in your body. <a target="_blank" href="https://www.youtube.com/watch?v=BVJkf8IuRjE">https://www.youtube.com/watch?v=BVJkf8IuRjE</a> What did you think of that video? \
-    <button id="yes8">Yes</button> <button id="no8">No</button>');
+    adduserChat('Sort of. Can you tell me more?');
+    addbotChat('Yes! Let’s learn more about it. As a general introduction, let’s watch this video together to get a better understanding of what anxiety is and its effects in your body. <a target="_blank" href="https://www.youtube.com/watch?v=BVJkf8IuRjE">https://www.youtube.com/watch?v=BVJkf8IuRjE</a> </br> What did you think of that video? \
+    <button id="yes8">It was super interesting! Tell me more.</button>');
   });
 
 // 8 
-
-$('#messages').on('click', '#no8', function(e) {
-    adduserChat('I want to leave');
-    addbotChat('Bye.');
-  });
-
   
   $('#messages').on('click', '#yes8', function(e) {
-    adduserChat('It was interesting! I want to learn more.');
+    adduserChat('It was super interesting! Tell me more.');
     addbotChat('That’s great! Have you ever wondered if you have anxiety? \
-    <button id="yes9">Yes</button> <button id="no9">No</button>');
+    <button id="yes9">I suppose the thought has crossed my mind.</button>');
   });
 
 // 9 
-
-$('#messages').on('click', '#no9', function(e) {
-    adduserChat('I want to leave');
-    addbotChat('Bye.');
-  });
-
   
   $('#messages').on('click', '#yes9', function(e) {
     adduserChat('I suppose the thought has crossed my mind.');
     addbotChat('Did you know that you can actually measure your anxiety levels from your saliva? \
-    <button id="yes10">Yes</button> <button id="no10">No</button>');
+    <button id="yes10">Huh???</button>');
   });
 
 // 10
-
-$('#messages').on('click', '#no10', function(e) {
-    adduserChat('I want to leave');
-    addbotChat('Bye.');
-  });
-
   
   $('#messages').on('click', '#yes10', function(e) {
-    adduserChat('Huh??');
+    adduserChat('<div style="width:100%;height:0;padding-bottom:117%;position:relative;"><iframe src="https://giphy.com/embed/l3q2K5jinAlChoCLS" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/mashable-l3q2K5jinAlChoCLS">via GIPHY</a></p>');
     addbotChat('When it comes to anxiety and stress, our central nervous system responds through the activation of the hypothalamic-pituitary-adrenal system. This means that our hypothalamus in our brain releases corticotropin-releasing hormones, signalling our pituitary glands to release adrenocorticotropic hormone, which finally signals the adrenal glands to release cortisol, the key player. A patient with anxiety experiences chronic stress, resulting in the persistent activation of the HPA system and impairment of cortisol to regulate its own production. Subsequently, the elevation of cortisol levels will lead to dysregulation of other important biochemicals, through decreased estrogen and testosterone levels, and impaired signalling of the serotonin pathways. \
-    <button id="yes11">Yes</button> <button id="no11">No</button>');
+    <button id="yes11">So, how do you actually measure it?</button>');
   });
 
 // 11
-
-$('#messages').on('click', '#no11', function(e) {
-    adduserChat('I want to leave');
-    addbotChat('Bye.');
-  });
-
   
   $('#messages').on('click', '#yes11', function(e) {
     adduserChat('So, how do you actually measure it?');
