@@ -8,7 +8,7 @@
 <img src="/builtwith2.png"> 
 
 
-## [You can test the app here](http://www.corticare.online/login)
+## [You can test the app here](http://www.corticare.online/)
 
 New users can register and make an account by entering details (username, email, password) or use the pre-made test user (**test/test**).
 
