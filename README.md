@@ -118,8 +118,6 @@ $
 $ # Access the dashboard in browser: http://127.0.0.1:5000/
 ```
 
-
-
 ## Deployment
 
 The app is provided with a basic configuration to be executed in [Docker](https://www.docker.com/), [Heroku](https://www.heroku.com/), [Gunicorn](https://gunicorn.org/), and [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/).
@@ -182,7 +180,6 @@ $ heroku open
 ```
 
 <br />
-
 
 
 ## Credits & Links
