@@ -29,7 +29,7 @@ span {
 	align-items: center;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(180deg, #2196f3, transparent);
+	background: linear-gradient(75deg, #2196f3, transparent);
 }
 
 .chat {
@@ -158,4 +158,26 @@ button:active, button:hover, button:focus {
 	span{
 		font-size: 150%;
 	}
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: white;
+}
+
+::-webkit-scrollbar
+{
+	width: 5px;
+	height: 5px;
+	background-color: linear-gradient(75deg, #2196f3, transparent);;
+	
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #2196F3;
 }

@@ -335,10 +335,6 @@ def stringtoDict(s):
 
 ## Image Process ##
 
-############################## Extract Section (Works with canera pics) #######################################
-
-#Fix required. Recalibarte for all samples and fix total formula
-
 def cortisolScoreNew(img):
 
     # Open image and make into Numpy array
