@@ -8,7 +8,6 @@
 <img src="/builtwith2.png"> 
 
 
-
 ## [You can test the app here](http://www.corticare.online/login)
 
 New users can register and make an account by entering details (username, email, password) or use the pre-made test user (**test/test**).
@@ -53,8 +52,6 @@ Our web app was built using Python, Flask, Pillow and SQlite database. While the
 
 > Features
 
-Our web app was built using python flask, pillow and sqlite database. While the base template is an open source template obtained for a flask admin dashboard, all of its features were built by us. 
-
 Our boilerplate contained:
 
 - DBMS: SQLite, PostgreSQL (production)
@@ -67,15 +64,15 @@ Features we implemented:
 - Dedicated admin login with doctor dashboard 
 - Admin verification for regular user page
 - Admin only user route to view users - revamped and our idea implemented
-- Test strip uploading and using our algorithm to determine cortisol scor
-- Numpy and pillow added to list of imports
+- Uploading images of test strip and using our algorithm to determine cortisol scor
+- Numpy and Pillow added to list of imports
 - User routes, pages revamped and our idea implemented
 - Database schema edited for more user related information
 - Graphs and charts generated from our data on the chart.js templates
 - Various HTML, CSS and JS embellishments throughout 
-- Support via Github and Discord.
+- Support via Github and Discord
 
-We moved app to git and heroku. Deployed on heroku with our domain.com domain name, "corticare.online" (http://corticare.com or corticare.com). CNAME edited on domain.com to point to heroku host.
+We moved app to Git and Heroku. Deployed on heroku with our domain.com domain name, "corticare.online" (http://corticare.com or corticare.com). CNAME edited on domain.com to point to Heroku host.
 
 <br />
 
