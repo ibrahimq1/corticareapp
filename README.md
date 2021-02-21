@@ -1,4 +1,4 @@
-# [CortiCare Hack & Heal](http://www.corticare.online/)
+# [CortiCare - Hack & Heal](http://www.corticare.online/)
 
 > An interactive online platform designed to educate individuals about their mental health and anxiety. This web app is designed to encourage people to book an appointment with a mental healthcare professional by providing insight to their own salivary cortisol measurements and monitor anxiety.
 
