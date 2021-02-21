@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $('#messages').on('click', '#yes4', function(e) {
     adduserChat('How do I know for sure?');
     addbotChat('I highly recommend that you do, especially if you have concerns about your mental health, it’s really important to talk to someone about it. Mental healthcare professionals, in particular, can help someone better understand and cope with thoughts, feelings and behaviors. They can also offer guidance and help improve a person’s ability to achieve life goals. They may also help assess and diagnose mental health conditions. \
-    <button id="yes5">Okay...How do I know if I have mental health problems?</button>');
+    <button id="yes5">How do I know if I have mental health problems?</button>');
   });
 
 // 5
@@ -84,13 +84,13 @@ document.addEventListener("DOMContentLoaded", () => {
   $('#messages').on('click', '#yes7', function(e) {
     adduserChat('Sort of. Can you tell me more?');
     addbotChat('Yes! Let’s learn more about it. As a general introduction, let’s watch this video together to get a better understanding of what anxiety is and its effects in your body. <a target="_blank" href="https://www.youtube.com/watch?v=BVJkf8IuRjE">https://www.youtube.com/watch?v=BVJkf8IuRjE</a> </br> What did you think of that video? \
-    <button id="yes8">It was super interesting! Tell me more.</button>');
+    <button id="yes8">It was super interesting!.</button>');
   });
 
 // 8 
   
   $('#messages').on('click', '#yes8', function(e) {
-    adduserChat('It was super interesting! Tell me more.');
+    adduserChat('It was super interesting!');
     addbotChat('That’s great! Have you ever wondered if you have anxiety? \
     <button id="yes9">I suppose the thought has crossed my mind.</button>');
   });
@@ -116,13 +116,13 @@ document.addEventListener("DOMContentLoaded", () => {
   $('#messages').on('click', '#yes11', function(e) {
     adduserChat('So, how do you actually measure it?');
     addbotChat('Lucky for you, the aim of CortiCare is to provide you with the experience of giving you insight to your own salivary cortisol measurements and monitor your anxiety. Are you interested?  \
-    <button id="yes12">Yes</button> <button id="no12">No</button>');
+    <button id="yes12">Yes, sign me up!</button> <button id="no12">No, thanks.</button>');
   });
 
 // 12
 
 $('#messages').on('click', '#no12', function(e) {
-    adduserChat('No, thank you.');
+    adduserChat('No, thanks.');
     addbotChat('Okay, no worries. We’re sad to see you go but we hope you come back to CortiCare to learn more in the future.');
   });
 
@@ -131,6 +131,7 @@ $('#messages').on('click', '#no12', function(e) {
     adduserChat('Yes, sign me up!');
      addbotChat('This is so exciting! In order to get you started, please create an account here: <a href="/register"> Lets go! </a> ');
   });
+
 
    
   
