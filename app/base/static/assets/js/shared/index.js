@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   $('#messages').on('click', '#no1', function(e) {
     adduserChat('No');
-    addbotChat('If you’re an existing user, log in to your account here: <a href="/login"> Lets go! </a>');
+    addbotChat('If you’re an existing user, log in to your account here: <a href="/login"> Let\'s go! </a>');
   });
 
   // 2

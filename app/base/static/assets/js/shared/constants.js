@@ -25,7 +25,8 @@ const prompts = [
   ["no","not sure","maybe","no thanks"],
   [""],
   ["haha","ha","lol","hehe","funny","joke"],
-  ["sup", "whats up", "yo", "whats good?", "ayo"]
+  ["sup", "whats up", "yo", "whats good?", "ayo"],
+  ["login"]
 ]
 
 // Possible responses, in corresponding order
@@ -59,7 +60,8 @@ const replies = [
   ["That's ok","I understand","What do you want to talk about?"],
   ["Please say something :("],
   ["Haha!","Good one!"],
-  ["<iframe src=\"https://giphy.com/embed/47DGndFXqif24qtlDd\" width=\"170\" height=\"280\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe><p><a href=\"https://giphy.com/gifs/barstoolsports-shoot-47DGndFXqif24qtlDd\">via GIPHY</a></p>"]
+  ["<iframe src=\"https://giphy.com/embed/47DGndFXqif24qtlDd\" width=\"170\" height=\"280\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe><p><a href=\"https://giphy.com/gifs/barstoolsports-shoot-47DGndFXqif24qtlDd\">via GIPHY</a></p>"],
+  ["<a href=\"/login\"> Lets go! </a>"]
 ]
 
 // Random for any other user input
