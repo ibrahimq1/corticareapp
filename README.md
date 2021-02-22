@@ -58,7 +58,7 @@ Our boilerplate contained:
 - DB Tools: SQLAlchemy ORM, Alembic (schema migrations)
 - Modular design with Blueprints, simple codebase
 - Session-based authentication (via flask_login), forms validation
-- Deployment scripts: Docker, Gunicorn/Nginx, Heroku
+- Deployment scripts: Docker, Gunicorn/Nginx, Heroku.
 
 Features we implemented:
 - Dedicated admin login with doctor dashboard 
